@@ -1,0 +1,46 @@
+<div class="pokemon-content">
+    <div class="pokemon-list row">
+        <div class="item pokemon-item col-xs-6 col-sm-4 col-md-3" *ngFor="let pokemon of pokemons | paginate: {itemsPerPage: 12, currentPage: currentPage, totalItems: pokemonCount }">
+            <div class="pokemon-item-info">
+                <img [src]="pokemon.sprites.front_default" alt="pokemon">
+                <div class="pokemon-name"><strong>{{pokemon.name}}</strong></div>
+                <div class="pokemon-details">
+                    <div class="pokemon-details-list">
+                        <span class="details-title">Type: </span>
+                        <span class="details">{{ pokemon.types[0].type.name }}</span>
+                    </div>
+                    <div class="pokemon-details-list">
+                        <span class="details-title">ID: </span>
+                        <span class="details">{{ pokemon.id }}</span>
+                    </div>
+                    <div class="pokemon-details-list">
+                        <span class="details-title">Height: </span>
+                        <span class="details">{{ pokemon.height }}</span>
+                    </div>
+                    <div class="pokemon-details-list">
+                        <span class="details-title">Weight: </span>
+                        <span class="details">{{ pokemon.weight }}</span>
+                    </div>
+                    <div class="pokemon-details-list">
+                        <span class="details-title">Health: </span>
+                        <span class="details">{{ pokemon.stats[0].base_stat }}</span>
+                    </div>
+                    <div class="pokemon-details-list">
+                        <span class="details-title">Power: </span>
+                        <span class="details">{{ pokemon.stats[1].base_stat }}</span>
+                    </div>
+                </div>
+            </div>            
+        </div>        
+    </div>
+</div>
+<div class="pagination-content">
+    <pagination-controls  (pageChange)="currentPage = $event; pokemons = []; getPokemons()"
+                      previousLabel="Prev"
+                      nextLabel="Next"
+                      screenReaderPaginationLabel="Pagination"
+                      screenReaderPageLabel="page"
+                      screenReaderCurrentLabel="You're on page">
+    </pagination-controls>
+</div>
+

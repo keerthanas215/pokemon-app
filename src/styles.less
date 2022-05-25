@@ -1,0 +1,85 @@
+/* You can add global styles to this file, and also import other style files */
+    @import "~bootstrap/dist/css/bootstrap.min.css";
+
+.page-wrapper{
+    margin: 0 10%;
+    
+    .pokemon-content{
+        .pokemon-item{
+            padding: 15px;
+
+            .pokemon-item-info{
+                padding: 5px;
+                background-color: #fff;
+                text-align: center;
+                border: 1px solid #e6e6e6;
+                box-shadow: 0 0 10px rgb(0 0 0 / 50%);                
+                border-radius: 10px;
+                
+                &:hover,&:active{
+                    box-shadow: 0 0px 10px rgb(0 0 0 / 5%);
+                }
+
+                .pokemon-name{
+                    text-transform: capitalize;
+                    font-size: 18px;
+                    margin: 10px 0px;
+                    text-align: center;
+                }
+
+                .pokemon-details{
+                    .pokemon-details-list{
+                        .details-title{
+                            font-weight: 500;
+                            color: #333;
+                        }
+
+                        .details{
+                            text-transform: capitalize;
+                            font-style: italic;
+                            font-weight: 400;
+                        }                    
+                    }
+                }
+            }
+        }
+    }
+
+    .pagination-content{
+        text-align: center;
+        margin: 20px 0px;
+
+        .ngx-pagination{
+            li{
+                color: #4880c0;
+                font-weight: bold;
+
+                &.disabled{
+                    color: #86afdd;
+                    font-weight: 400;
+                }
+
+                &.current{
+                    background: #ffd701;
+                    color: #4880c0;
+                    font-weight: bold;
+                    border-radius: 50%;
+                }
+
+                a:not([href]):not([class]):hover{
+                    background: #f5e488;
+                    text-decoration: none;
+                    border-radius: 50%;
+                }
+
+                &.pagination-next a::after,
+                &.pagination-next.disabled::after,
+                &.pagination-previous a::before,
+                &.pagination-previous.disabled::before{
+                    content: none;
+                }
+            }
+            
+        }
+    }
+}
